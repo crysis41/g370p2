@@ -5,78 +5,134 @@ using UnityEngine;
 public class footmanBehaviourScript : MonoBehaviour
 {
     const float speed = 5.0f;
-    public float health;
+    public float b;
+    public float coin = 18;
+    public float timer;
+    public float timerLength;
 
     public GameObject destination;
 
-    public float healthDesire, goldDesire, attackDesire;
+    public float thirstDesire, foodDesire, entertainmentDesire, restDesire;
     void Start()
     {
-        health = 100.0f;
+        b = Random.Range(1, 100);
         destination = null;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (timer >= 0)
+        {
+            timer -= Time.deltaTime;
+        }
+
         GetDesire();
 
-        Move();
+        if (timer <= 0)
+            Move();
+
+        CheckLocation();
     }
 
     void GetDesire()
     {
-        goldDesire = 0.0f;
-        healthDesire = 0.0f;
-        attackDesire = 0.0f;
+        foodDesire = 0.0f;
+        thirstDesire = 0.0f;
+        entertainmentDesire = 0.0f;
+        restDesire = 0.0f;
 
-        healthDesire = GetHealthDesire();
-        goldDesire = GetGoldDesire();
-        attackDesire = GetAttackDesire();
+        thirstDesire = GetThirstDesire();
+        foodDesire = GetFoodDesire();
+        entertainmentDesire = GetEntertainmentDesire();
+        restDesire = GetRestDesire();
 
-        if (goldDesire > healthDesire && goldDesire > attackDesire)
+        if (foodDesire > thirstDesire && foodDesire > restDesire && foodDesire > entertainmentDesire && coin >= 0)
         {
-            destination = GameObject.FindGameObjectWithTag("chest");
+            destination = GameObject.FindGameObjectWithTag("food");
         }
-        else if (attackDesire > healthDesire && attackDesire > goldDesire)
+        else if (thirstDesire > foodDesire && thirstDesire > restDesire && thirstDesire > entertainmentDesire && coin >= 0)
         {
-            destination = GameObject.FindGameObjectWithTag("orc");
+            destination = GameObject.FindGameObjectWithTag("thirst");
         }
-        else if (healthDesire > attackDesire && healthDesire > goldDesire)
+        else if (restDesire > foodDesire && restDesire > thirstDesire && restDesire > entertainmentDesire && coin >= 0)
         {
-            GameObject[] healthList = GameObject.FindGameObjectsWithTag("healthkit");
-            destination = healthList[0];
-            float closestDistance = Vector3.Distance(gameObject.transform.position, healthList[0].transform.position);
-
-            foreach (GameObject healthUnit in healthList)
-            {
-                float currentDistance = Vector3.Distance(gameObject.transform.position, healthUnit.transform.position);
-                if (currentDistance < closestDistance)
-                {
-                    closestDistance = currentDistance;
-                    destination = healthUnit;
-                }
-            }
+            destination = GameObject.FindGameObjectWithTag("rest");
+        }
+        else if (entertainmentDesire > foodDesire && entertainmentDesire > thirstDesire && entertainmentDesire  > restDesire && coin >= 0)
+        {
+            destination = GameObject.FindGameObjectWithTag("entertainment");
+        }
+        else
+        {
+            destination = GameObject.FindGameObjectWithTag("home");
         }
     }
 
-    float GetHealthDesire()
+    float GetThirstDesire()
     {
-        return 1000 * Mathf.Exp(-.1f * health);
+        return 9.9f * CbRt(b);
     }
 
-    float GetGoldDesire()
+    float GetFoodDesire()
     {
-        return 30;
+        return 50 * Mathf.Sin(.15f * b);
     }
 
-    float GetAttackDesire()
-    {
-        return 10 * Mathf.Log(health, 4.2f);
+    float GetEntertainmentDesire()
+	{
+        return 100 * Mathf.Exp(-.1f * b);
     }
+
+    float GetRestDesire()
+	{
+        return 5 * Mathf.Sqrt(b);
+	}
 
     void Move()
     {
         gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, destination.transform.position, speed * Time.deltaTime);
+    }
+
+    float CbRt(float root)
+    {
+        double third = 1f / 3f;
+        return Mathf.Pow(root, (float) third);
+    }
+
+    void CheckLocation()
+    {
+        if (gameObject.transform.position == destination.transform.position)
+        {
+            float bNew = Random.Range(1, 100);
+            while (bNew == b)
+            {
+                bNew = Random.Range(1, 100);
+            }
+
+            coin -= 3;
+
+            b = bNew;
+
+            if (coin <= 3f)
+            {
+                destination = GameObject.FindGameObjectWithTag("home");
+            }
+
+            //Wait();
+            timer = timerLength;
+        }
+    }
+
+    void Wait()
+    {
+        //if (timer <= 0)
+        //{
+        //    timer = timerLength;
+        //}
+        //else
+        //{
+        //    timer -= Time.deltaTime;
+        //}
     }
 }
