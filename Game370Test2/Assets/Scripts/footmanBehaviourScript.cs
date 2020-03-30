@@ -12,6 +12,8 @@ public class footmanBehaviourScript : MonoBehaviour
 
     public GameObject destination;
 
+    public GameObject[] locations;
+
     public float thirstDesire, foodDesire, entertainmentDesire, restDesire;
     void Start()
     {
@@ -37,15 +39,19 @@ public class footmanBehaviourScript : MonoBehaviour
 
     void GetDesire()
     {
+        GameObject temp;
+
         foodDesire = 0.0f;
         thirstDesire = 0.0f;
         entertainmentDesire = 0.0f;
         restDesire = 0.0f;
 
-        thirstDesire = GetThirstDesire();
         foodDesire = GetFoodDesire();
+        thirstDesire = GetThirstDesire();
         entertainmentDesire = GetEntertainmentDesire();
         restDesire = GetRestDesire();
+
+        //locations[0] = ;
 
         if (foodDesire > thirstDesire && foodDesire > restDesire && foodDesire > entertainmentDesire && coin >= 0)
         {
@@ -55,13 +61,13 @@ public class footmanBehaviourScript : MonoBehaviour
         {
             destination = GameObject.FindGameObjectWithTag("thirst");
         }
+        else if (entertainmentDesire > foodDesire && entertainmentDesire > thirstDesire && entertainmentDesire > restDesire && coin >= 0)
+        {
+            destination = GameObject.FindGameObjectWithTag("entertainment");
+        }
         else if (restDesire > foodDesire && restDesire > thirstDesire && restDesire > entertainmentDesire && coin >= 0)
         {
             destination = GameObject.FindGameObjectWithTag("rest");
-        }
-        else if (entertainmentDesire > foodDesire && entertainmentDesire > thirstDesire && entertainmentDesire  > restDesire && coin >= 0)
-        {
-            destination = GameObject.FindGameObjectWithTag("entertainment");
         }
         else
         {
@@ -119,20 +125,7 @@ public class footmanBehaviourScript : MonoBehaviour
                 destination = GameObject.FindGameObjectWithTag("home");
             }
 
-            //Wait();
             timer = timerLength;
         }
-    }
-
-    void Wait()
-    {
-        //if (timer <= 0)
-        //{
-        //    timer = timerLength;
-        //}
-        //else
-        //{
-        //    timer -= Time.deltaTime;
-        //}
     }
 }
