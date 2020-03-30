@@ -39,7 +39,7 @@ public class footmanBehaviourScript : MonoBehaviour
 
     void GetDesire()
     {
-        GameObject temp;
+        //GameObject temp;
 
         foodDesire = 0.0f;
         thirstDesire = 0.0f;
@@ -53,19 +53,20 @@ public class footmanBehaviourScript : MonoBehaviour
 
         //locations[0] = ;
 
-        if (foodDesire > thirstDesire && foodDesire > restDesire && foodDesire > entertainmentDesire && coin >= 0)
+
+        if (foodDesire > thirstDesire && foodDesire > restDesire && foodDesire > entertainmentDesire && coin > 0)
         {
             destination = GameObject.FindGameObjectWithTag("food");
         }
-        else if (thirstDesire > foodDesire && thirstDesire > restDesire && thirstDesire > entertainmentDesire && coin >= 0)
+        else if (thirstDesire > foodDesire && thirstDesire > restDesire && thirstDesire > entertainmentDesire && coin > 0)
         {
             destination = GameObject.FindGameObjectWithTag("thirst");
         }
-        else if (entertainmentDesire > foodDesire && entertainmentDesire > thirstDesire && entertainmentDesire > restDesire && coin >= 0)
+        else if (entertainmentDesire > foodDesire && entertainmentDesire > thirstDesire && entertainmentDesire > restDesire && coin > 0)
         {
             destination = GameObject.FindGameObjectWithTag("entertainment");
         }
-        else if (restDesire > foodDesire && restDesire > thirstDesire && restDesire > entertainmentDesire && coin >= 0)
+        else if (restDesire > foodDesire && restDesire > thirstDesire && restDesire > entertainmentDesire && coin > 0)
         {
             destination = GameObject.FindGameObjectWithTag("rest");
         }
@@ -119,11 +120,6 @@ public class footmanBehaviourScript : MonoBehaviour
             coin -= 3;
 
             b = bNew;
-
-            if (coin <= 3f)
-            {
-                destination = GameObject.FindGameObjectWithTag("home");
-            }
 
             timer = timerLength;
         }
