@@ -270,15 +270,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   b: 0
-  coin: 18
+  coin: 12
   timer: 0
   timerLength: 3
   destination: {fileID: 0}
-  locations:
-  - {fileID: 2146744435}
-  - {fileID: 720019113}
-  - {fileID: 1789955073}
-  - {fileID: 2085545417}
   thirstDesire: 0
   foodDesire: 0
   entertainmentDesire: 0

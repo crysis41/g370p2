@@ -12,8 +12,6 @@ public class footmanBehaviourScript : MonoBehaviour
 
     public GameObject destination;
 
-    public GameObject[] locations;
-
     public float thirstDesire, foodDesire, entertainmentDesire, restDesire;
     void Start()
     {
@@ -51,8 +49,6 @@ public class footmanBehaviourScript : MonoBehaviour
         entertainmentDesire = GetEntertainmentDesire();
         restDesire = GetRestDesire();
 
-        //locations[0] = ;
-
 
         if (foodDesire > thirstDesire && foodDesire > restDesire && foodDesire > entertainmentDesire && coin > 0)
         {
@@ -78,17 +74,17 @@ public class footmanBehaviourScript : MonoBehaviour
 
     float GetThirstDesire()
     {
-        return 9.9f * CbRt(b);
+        return 75 * Mathf.Sin(.3f * b);
     }
 
     float GetFoodDesire()
     {
-        return 50 * Mathf.Sin(.15f * b);
+        return 75 * Mathf.Sin(.15f * b);
     }
 
     float GetEntertainmentDesire()
 	{
-        return 100 * Mathf.Exp(-.1f * b);
+        return -1 * Mathf.Pow(b-80, 2) + 100;
     }
 
     float GetRestDesire()
@@ -99,12 +95,6 @@ public class footmanBehaviourScript : MonoBehaviour
     void Move()
     {
         gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, destination.transform.position, speed * Time.deltaTime);
-    }
-
-    float CbRt(float root)
-    {
-        double third = 1f / 3f;
-        return Mathf.Pow(root, (float) third);
     }
 
     void CheckLocation()
