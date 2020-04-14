@@ -9,10 +9,9 @@ public class footmanBehaviourScript : MonoBehaviour
     public float coin = 18;
     public float timer;
     public float timerLength;
-
     public GameObject destination;
-
     public float thirstDesire, foodDesire, entertainmentDesire, restDesire;
+
     void Start()
     {
         b = Random.Range(1, 100);
@@ -107,7 +106,7 @@ public class footmanBehaviourScript : MonoBehaviour
                 bNew = Random.Range(1, 100);
             }
 
-            coin -= 3;
+            coin = coin - 3;
 
             b = bNew;
 
