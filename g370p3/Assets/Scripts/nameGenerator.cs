@@ -17,8 +17,8 @@ public class nameGenerator : MonoBehaviour
         firstName = System.IO.File.ReadAllLines(@"C:\Users\wilso\OneDrive\Documents\GitHub\g370p2\g370p3\Assets\firstNames.txt");
         lastName = System.IO.File.ReadAllLines(@"C:\Users\wilso\OneDrive\Documents\GitHub\g370p2\g370p3\Assets\lastNames.txt");
 
-        randFirst = Random.Range(0, 79);
-        randLast = Random.Range(0, 79);
+        randFirst = Random.Range(0, 99);
+        randLast = Random.Range(0, 99);
 
         charName = firstName[randFirst] + " " + lastName[randLast] + "\n";
     }
