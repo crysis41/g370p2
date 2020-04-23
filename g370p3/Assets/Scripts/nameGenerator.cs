@@ -15,8 +15,8 @@ public class nameGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        firstName = System.IO.File.ReadAllLines(@"C:\Users\wilso\OneDrive\Documents\GitHub\g370p2\g370p3\Assets\firstNames.txt");
-        lastName = System.IO.File.ReadAllLines(@"C:\Users\wilso\OneDrive\Documents\GitHub\g370p2\g370p3\Assets\lastNames.txt");
+        firstName = System.IO.File.ReadAllLines(@"C:\Users\wilso\OneDrive\Documents\GitHub\g370p2\g370p3\Assets\TXTFiles\firstNames.txt");
+        lastName = System.IO.File.ReadAllLines(@"C:\Users\wilso\OneDrive\Documents\GitHub\g370p2\g370p3\Assets\TXTFiles\lastNames.txt");
 
         randFirst = Random.Range(0, firstName.Length);
         randLast = Random.Range(0, lastName.Length);
@@ -40,8 +40,8 @@ public class nameGenerator : MonoBehaviour
 
     void ChangeName()
     {
-        randFirst = Random.Range(0, 99);
-        randLast = Random.Range(0, 99);
+        randFirst = Random.Range(0, firstName.Length);
+        randLast = Random.Range(0, lastName.Length);
 
         charName = firstName[randFirst] + " " + lastName[randLast] + "\n";
 

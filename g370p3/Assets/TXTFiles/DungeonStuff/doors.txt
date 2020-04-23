@@ -1,0 +1,14 @@
+wooden
+wooden, barred
+wooden, locked
+stone
+stone, barred
+stone, locked
+iron
+iron, barred
+iron, locked
+portcullis
+portcullis, locked in place
+mystery
+mystery, barred
+mystery, locked

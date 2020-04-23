@@ -1,0 +1,4 @@
+wall opposite of the entrance
+wall to the left of the entrance
+wall to the right of the entrance
+same wall as the entrance

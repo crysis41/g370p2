@@ -63,13 +63,31 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\dungeonGenerator.cs" />
-    <Compile Include="Assets\Scripts\input.cs" />
-    <Compile Include="Assets\Scripts\manager.cs" />
+    <Compile Include="Assets\Scripts\Exit.cs" />
+    <Compile Include="Assets\Scripts\GameController.cs" />
+    <Compile Include="Assets\Scripts\Go.cs" />
+    <Compile Include="Assets\Scripts\InputAction.cs" />
     <Compile Include="Assets\Scripts\nameGenerator.cs" />
-    <Compile Include="Assets\Scripts\Room.cs" />
-    <None Include="Assets\firstNames.txt" />
-    <None Include="Assets\lastNames.txt" />
+    <Compile Include="Assets\Scripts\Old Code\dungeonGenerator.cs" />
+    <Compile Include="Assets\Scripts\Old Code\input.cs" />
+    <Compile Include="Assets\Scripts\Old Code\manager.cs" />
+    <Compile Include="Assets\Scripts\Old Code\Room.cs" />
+    <Compile Include="Assets\Scripts\RoomNavigation.cs" />
+    <Compile Include="Assets\Scripts\RoomTutorial.cs" />
+    <Compile Include="Assets\Scripts\TextInput.cs" />
+    <None Include="Assets\TXTFiles\DungeonStuff\chambers.txt" />
+    <None Include="Assets\TXTFiles\DungeonStuff\exitLocation.txt" />
+    <None Include="Assets\TXTFiles\firstNames.txt" />
+    <None Include="Assets\TXTFiles\DungeonStuff\passages.txt" />
+    <None Include="Assets\TextAdventure_pt1\Text_Adventure\ProjectSettings\ProjectVersion.txt" />
+    <None Include="Assets\TXTFiles\DungeonStuff\beyondDoor.txt" />
+    <None Include="Assets\TXTFiles\lastNames.txt" />
+    <None Include="Assets\TXTFiles\DungeonStuff\chamberExitsSmall.txt" />
+    <None Include="Assets\TXTFiles\DungeonStuff\chamberExitsLarge.txt" />
+    <None Include="Assets\TXTFiles\DungeonStuff\exitType.txt" />
+    <None Include="Assets\TXTFiles\fuck.txt" />
+    <None Include="Assets\TXTFiles\DungeonStuff\doors.txt" />
+    <None Include="Assets\TXTFiles\DungeonStuff\startingArea.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/wilso/OneDrive/Documents/GitHub/g370p2/g370p3/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

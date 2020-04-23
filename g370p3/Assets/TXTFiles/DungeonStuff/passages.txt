@@ -1,0 +1,11 @@
+Continue straight for 30 ft, no doors or side passages
+Continue straight for 20 ft, there's a door on your right, then continue an additional 10 ft ahead
+Continue straight for 20 ft, there's a door on your left, then continue an additional 10 ft ahead
+Continue straight for 20 ft, the passage then ends in a door
+Continue straight for 20 ft, there's a side passage to the right, and the original passage continues for an additional 10 ft ahead
+Continue straight for 20 ft, there's a side passage to the left, and the original passage continues for an additional 10 ft ahead
+Continue straight for 20 ft, the passage then comes to a dead end
+Continue straight for 20 ft, then the passage turns left and continues 10 ft
+Continue straight for 20 ft, then the passage turns right and continues 10 ft
+You enter into another chamber
+You go up a flight of stairs

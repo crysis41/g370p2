@@ -1,0 +1,12 @@
+20x20 ft square room
+30x30 ft square room
+40x40 ft square room
+20x30 ft rectangle room
+30x40 ft rectangle room
+40x50 ft rectangle room
+50x80 ft rectangle room
+30 ft diameter circle room
+50 ft diameter circle room
+40x40 ft octagonal room
+60x60 ft octagonal room
+roughly 40x60 ft trapezoidal room

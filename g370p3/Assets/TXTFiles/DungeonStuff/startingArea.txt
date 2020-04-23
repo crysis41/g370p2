@@ -1,0 +1,10 @@
+20x20 ft square room, with a passage on each wall
+20x20 ft square room, one door on two walls, and a passage in the third wall
+Square, 40x40 ft room, doors on three walls
+Rectangle, 80x20 ft room, with a row of pillars down the middle; two passages leading from each long wall, doors on each short wall
+Rectangle, 20x40 ft room, with a passage on each wall
+Circle, 40 ft diameter room, with a passage at each cardinal direction
+Circle, 40 ft diameter room, with a passage in each cardinal direction and a well in the center of the room
+Square, 20x20 ft room, door on two walls, passage on the third wall, and a mystery on the fourth
+10 ft wide passage leading to a T intersection
+10 ft wide passage leading to a four-way intersection
