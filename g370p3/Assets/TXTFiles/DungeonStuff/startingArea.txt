@@ -1,10 +1,10 @@
-20x20 ft square room, with a passage on each wall
-20x20 ft square room, one door on two walls, and a passage in the third wall
-Square, 40x40 ft room, doors on three walls
-Rectangle, 80x20 ft room, with a row of pillars down the middle; two passages leading from each long wall, doors on each short wall
-Rectangle, 20x40 ft room, with a passage on each wall
-Circle, 40 ft diameter room, with a passage at each cardinal direction
-Circle, 40 ft diameter room, with a passage in each cardinal direction and a well in the center of the room
-Square, 20x20 ft room, door on two walls, passage on the third wall, and a mystery on the fourth
-10 ft wide passage leading to a T intersection
-10 ft wide passage leading to a four-way intersection
+20x20 ft square room, with three disabled passages and one to your left
+20x20 ft square room, one broken door to your left, a fallen in passage to your right, and an open passage straight ahead
+40x40 ft square room, two shattered doors with fallen in passages on either side of you, and a lone wooden door in front of you
+80x20 ft rectangle room, with a row of pillars down the middle; two passages leading from each long wall that have fallen in, a door on the wall to your right
+20x40 ft rectangle room, with a passage on each wall, two of which are caved in, leaving the one to your left as your only option
+40 ft diameter circular room, with a passage at each cardinal direction, two of which are caved in, one is the one you came in, and the other is completely open
+40 ft diameter circular room, with a passage in each cardinal direction, two of which are caved in, one is the one you came in, and the other is completely open, and a well in the center of the room. The well goes down about 20 feet before stopping
+20x20 ft square room, with only one door off to your left
+10 ft wide passage leading to a hooked path to the right
+10 ft wide passage leading straight forward

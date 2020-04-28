@@ -27,26 +27,26 @@ public class nameGenerator : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (timer >= 0)
-        {
-            timer -= Time.deltaTime;
-        }
+    //void Update()
+    //{
+    //    if (timer >= 0)
+    //    {
+    //        timer -= Time.deltaTime;
+    //    }
 
-        if (timer < 0)
-            ChangeName();
-    }
+    //    if (timer < 0)
+    //        ChangeName();
+    //}
 
-    void ChangeName()
-    {
-        randFirst = Random.Range(0, firstName.Length);
-        randLast = Random.Range(0, lastName.Length);
+    //void ChangeName()
+    //{
+    //    randFirst = Random.Range(0, firstName.Length);
+    //    randLast = Random.Range(0, lastName.Length);
 
-        charName = firstName[randFirst] + " " + lastName[randLast] + "\n";
+    //    charName = firstName[randFirst] + " " + lastName[randLast] + "\n";
 
-        gameObject.name = charName;
+    //    gameObject.name = charName;
 
-        timer = timerLength;
-    }
+    //    timer = timerLength;
+    //}
 }

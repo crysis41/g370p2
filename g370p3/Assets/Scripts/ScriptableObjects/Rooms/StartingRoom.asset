@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6d0e706676162c4ca076d7666bc90c9, type: 3}
   m_Name: StartingRoom
   m_EditorClassIdentifier: 
-  description: Square, 20x20 ft room, door on two walls, passage on the third wall,
-    and a mystery on the fourth
+  description: 10 ft wide passage leading to a hooked path to the right
   roomName: starting room
   exits: []
