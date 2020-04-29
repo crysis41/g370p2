@@ -429,7 +429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1daac19eb21752743b775d8bd487356e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentRoom: {fileID: 11400000, guid: 3c9652aa8c300394b8370e8d09bce474, type: 2}
+  currentRoom: {fileID: 0}
 --- !u!114 &1513237027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -445,8 +445,10 @@ MonoBehaviour:
   inputActions:
   - {fileID: 11400000, guid: b570dd382d25a1b41897ae48c3316ca6, type: 2}
   displayText: {fileID: 473952483}
+  nmG: {fileID: 0}
   roomNavigation: {fileID: 0}
   interactionDescriptionsInRoom: []
+  room: []
   beyondDoor: []
   chambers: []
   doors: []
@@ -458,11 +460,10 @@ MonoBehaviour:
   cES: []
   furnishings: []
   chamberState: []
-  chamberExitsLarge: 
-  chamberExitsSmall: 
-  dungType: 0
+  dungeonType: 0
   rooms: 0
   die: 0
+  direction: 0
 --- !u!4 &1513237028
 Transform:
   m_ObjectHideFlags: 0

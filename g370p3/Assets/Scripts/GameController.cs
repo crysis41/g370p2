@@ -136,29 +136,6 @@ public class GameController : MonoBehaviour
         die = Random.Range(0, 9);
 
         direction = Random.Range(0, 3);
-        //roomNavigation.currentRoom.exits = new Exit[1];
-
-        //Debug.Log("Exits array length: " + roomNavigation.currentRoom.exits.Length);
-
-        //switch (direction)
-        //{
-        //    case 0:
-        //        roomNavigation.currentRoom.exits[0].keyString = "north";
-        //        roomNavigation.currentRoom.exits[0].exitDescription = "You see an exit to the north.";
-        //        break;
-        //    case 1:
-        //        roomNavigation.currentRoom.exits[0].keyString = "south";
-        //        roomNavigation.currentRoom.exits[0].exitDescription = "You see an exit to the south.";
-        //        break;
-        //    case 2:
-        //        roomNavigation.currentRoom.exits[0].keyString = "east";
-        //        roomNavigation.currentRoom.exits[0].exitDescription = "You see an exit to the east.";
-        //        break;
-        //    case 3:
-        //        roomNavigation.currentRoom.exits[0].keyString = "west";
-        //        roomNavigation.currentRoom.exits[0].exitDescription = "You see an exit to the west.";
-        //        break;
-        //}
 
         room = new RoomTutorial[rooms];
 
@@ -168,11 +145,11 @@ public class GameController : MonoBehaviour
         {
             room[i] = ScriptableObject.CreateInstance<RoomTutorial>();
             room[i].roomName = "room" + (i + 1);
-            if (i == 0)
+            if (i == 0) // start room
             {
-
                 room[i].exits = new Exit[1];
-                Debug.Log("Exit array length: " + room[i].exits.Length);
+                room[i].description = startingArea[die];
+
                 switch (direction)
                 {
                     case 0:
@@ -197,7 +174,35 @@ public class GameController : MonoBehaviour
                         break;
                 }
             }
-            else
+            else if (i == rooms) // end room
+            {
+                room[i].exits = new Exit[1];
+
+                switch (direction)
+                {
+                    case 0:
+                        room[i].exits[0].keyString = "south";
+                        room[i].exits[0].exitDescription = "You see an exit to the south.";
+                        room[i].exits[0].valueRoom = room[i - 1];
+                        break;
+                    case 1:
+                        room[i].exits[0].keyString = "north";
+                        room[i].exits[0].exitDescription = "You see an exit to the north.";
+                        room[i].exits[0].valueRoom = room[i - 1];
+                        break;
+                    case 2:
+                        room[i].exits[0].keyString = "west";
+                        room[i].exits[0].exitDescription = "You see an exit to the west.";
+                        room[i].exits[0].valueRoom = room[i - 1];
+                        break;
+                    case 3:
+                        room[i].exits[0].keyString = "east";
+                        room[i].exits[0].exitDescription = "You see an exit to the east.";
+                        room[i].exits[0].valueRoom = room[i - 1];
+                        break;
+                }
+            }
+            else // literally every other room
             {
                 room[i].exits = new Exit[2];
 
@@ -234,28 +239,58 @@ public class GameController : MonoBehaviour
 
                 direction = temp;
 
-                switch (direction)
+                if (i + 1 == rooms) // for the last room
                 {
-                    case 0:
-                        room[i].exits[1].keyString = "north";
-                        room[i].exits[1].exitDescription = "You see an exit to the north.";
-                        room[i].exits[1].valueRoom = room[i + 1];
-                        break;
-                    case 1:
-                        room[i].exits[1].keyString = "south";
-                        room[i].exits[1].exitDescription = "You see an exit to the south.";
-                        room[i].exits[1].valueRoom = room[i + 1];
-                        break;
-                    case 2:
-                        room[i].exits[1].keyString = "east";
-                        room[i].exits[1].exitDescription = "You see an exit to the east.";
-                        room[i].exits[1].valueRoom = room[i + 1];
-                        break;
-                    case 3:
-                        room[i].exits[1].keyString = "west";
-                        room[i].exits[1].exitDescription = "You see an exit to the west.";
-                        room[i].exits[1].valueRoom = room[i + 1];
-                        break;
+                    switch (direction)
+                    {
+                        case 0:
+                            room[i].exits[1].keyString = "north";
+                            room[i].exits[1].exitDescription = "You see an exit to the north.";
+                            room[i].exits[1].valueRoom = room[i];
+                            break;
+                        case 1:
+                            room[i].exits[1].keyString = "south";
+                            room[i].exits[1].exitDescription = "You see an exit to the south.";
+                            room[i].exits[1].valueRoom = room[i];
+                            break;
+                        case 2:
+                            room[i].exits[1].keyString = "east";
+                            room[i].exits[1].exitDescription = "You see an exit to the east.";
+                            room[i].exits[1].valueRoom = room[i];
+                            break;
+                        case 3:
+                            room[i].exits[1].keyString = "west";
+                            room[i].exits[1].exitDescription = "You see an exit to the west.";
+                            room[i].exits[1].valueRoom = room[i];
+                            break;
+                    }
+
+                }
+                else // every other room
+                {
+                    switch (direction)
+                    {
+                        case 0:
+                            room[i].exits[1].keyString = "north";
+                            room[i].exits[1].exitDescription = "You see an exit to the north.";
+                            room[i].exits[1].valueRoom = room[i + 1];
+                            break;
+                        case 1:
+                            room[i].exits[1].keyString = "south";
+                            room[i].exits[1].exitDescription = "You see an exit to the south.";
+                            room[i].exits[1].valueRoom = room[i + 1];
+                            break;
+                        case 2:
+                            room[i].exits[1].keyString = "east";
+                            room[i].exits[1].exitDescription = "You see an exit to the east.";
+                            room[i].exits[1].valueRoom = room[i + 1];
+                            break;
+                        case 3:
+                            room[i].exits[1].keyString = "west";
+                            room[i].exits[1].exitDescription = "You see an exit to the west.";
+                            room[i].exits[1].valueRoom = room[i + 1];
+                            break;
+                    }
                 }
             }
         }

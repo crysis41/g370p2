@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class Exit
+public struct Exit
 {
     public string keyString;
     public string exitDescription;
