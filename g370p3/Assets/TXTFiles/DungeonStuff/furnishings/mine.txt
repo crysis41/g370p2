@@ -1,0 +1,13 @@
+a barracks for the miners
+a bedroom for a supervisor or manager
+a chapel dedicated to Moradin
+a cistern providing drinking water for the miners
+a guardroom
+a kitchen used to feed workers
+a laboratory used to conduct tests on strange minerals extracted from the mine
+a lode where metal ore is mined, although this one looks to be completely depleted
+a lode where metal ore is mined, and this one looks to be about half depleted
+an office used by the mine supervisor
+a smithy for repairing damaged tools
+a storage room for tools and other equipment
+a strong room or vault used to store ore for transport to the surface

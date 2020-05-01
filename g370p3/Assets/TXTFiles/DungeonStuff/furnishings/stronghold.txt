@@ -1,0 +1,29 @@
+an antechamber where visitors seeking access to the stronghold wait
+an armory holding high-quality gear, including light siege weapons such as ballistas
+an audience chamber used by the master of the stronghold to receive visitors
+an aviary or zoo for keeping exotic creatures
+a banquet room for hosting celebrations and guests
+a barracks used by elite guards
+a bath outfitted with a marble floor and other luxurious accoutrements
+a bedroom for use by the stronghold’s master or important guests
+a chapel dedicated to Vecna
+a cistern providing drinking water
+a dining room for intimate gatherings or informal meals
+a dressing room featuring a number of wardrobes
+a gallery for the display of expensive works of art and trophies
+a gallery for the display of expensive works of art and trophies
+a guardroom
+a kennel where monsters or trained animals that protect the stronghold are kept
+a kitchen designed to prepare exotic foods for large numbers of guests
+a library with an extensive collection of rare books
+a lounge used to entertain guests
+a pantry, including cellar for wine or spirits
+a sitting room for family and intimate guests
+a stable
+a storage for mundane goods and supplies
+a vault for protecting important treasures
+a study, including a writing desk
+a throne room, elaborately decorated
+a waiting room where lesser guests are held before receiving an audience
+a latrine
+a cypt belonging to the stronghold’s master or someone else of importance

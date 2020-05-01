@@ -1,0 +1,12 @@
+an antechamber for visiting dignitaries
+an armory containing mundane and magic gear used by the treasure vault’s guards
+a barracks for guards
+a cistern providing fresh water
+a guardroom to defend against intruders
+a kennel for trained beasts used to guard the treasure vault
+a kitchen for feeding guards
+a watch room that allows guards to observe those who approach the dungeon
+a prison for holding captured intruders
+a vault, for guarding the treasure hidden in the dungeon
+a torture chamber for extracting information from captured intruders
+a trap or other trick designed to capture creatures that enter the dungeon, although it seems to have been disabled

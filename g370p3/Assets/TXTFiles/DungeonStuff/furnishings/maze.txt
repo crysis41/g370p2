@@ -1,0 +1,9 @@
+a conjuring room, used to summon creatures that guard the maze
+a guardroom for sentinels that patrol the maze
+a lair for guard beasts that patrol the maze
+a pen or prison used to hold captives condemned to the maze
+a shrine dedicated to some indiscriminate deity
+a storage room for food, as well as tools used by the maze's guardians to keep the complex in working order
+a trap to confound or kill those sent into the maze, although it seems to have been disabled
+a well that provides drinking water
+a workshop where doors, torch sconces, and other furnishings are repaired and maintained

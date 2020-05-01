@@ -1,0 +1,28 @@
+an armory filled with weapons and armor, battle banners, and pennants
+an audience chamber where priests of the temple receive commoners and low-ranking visitors
+a banquet room used for celebrations and holy days
+a barracks for the temple’s military arm or its hired guards
+a cells where the faithful can sit in quiet contemplation
+a central temple built to accommodate rituals
+a chapel dedicated to a lesser deity associated with the temple’s major deity
+a classroom used to train initiates and priests
+a conjuring room, specially sanctified and used to summon extraplanar creatures
+a crypt for a high priest or similar figure
+a dining room (large) for the temple’s servants and lesser priests
+a dining room (small) for the temple’s high priests
+a divination room, inscribed with runes and stocked with soothsaying implements
+a dormitory for lesser priests or students
+a guardroom
+a kennel for animals or monsters associated with the temple’s deity
+a kitchen
+a library, well stocked with religious treatises
+a prison for captured enemies
+a robing room containing ceremonial outfits and items
+a stable for riding horses and mounts belonging to the temple, or for visiting messengers and caravans
+a storage holding mundane supplies
+a strong room or vault holding important relics and ceremonial items, heavily trapped
+a torture chamber, used in inquisitions
+a trophy room where art celebrating key figures and events from mythology is displayed
+a latrine
+a well for drinking water, defendable in the case of attack or siege
+a workshop for repairing or creating weapons, religious items, and tools

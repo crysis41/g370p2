@@ -1,0 +1,12 @@
+an antechamber for those that have come to pay respect to the dead or prepare themselves for burial rituals
+a chapel dedicated to deities that watch over the dead and protect their resting places
+a crypt for less important burials
+a divination room, used in rituals to contact the dead for guidance
+a false crypt used to kill or capture thieves
+a gallery to display the deeds of the deceased through trophies, statues, paintings and so forth
+a grand crypt for a noble, high priest, or other important individual
+a guardroom, usually guarded by undead, constructs, or other creatures that don’t need to eat or sleep
+a robing room for priests to prepare for burial rituals
+a storage room, stocked with tools for maintaining the tomb and preparing the dead for burial
+a tomb where the wealthiest and most important folk are interred
+a workshop for embalming the dead

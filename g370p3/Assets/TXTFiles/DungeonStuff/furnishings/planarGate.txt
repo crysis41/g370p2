@@ -1,0 +1,27 @@
+a decorated foyer or antechamber
+an armory used by the portal's guardians
+an audience chamber for receiving visitors
+a barracks used by the portal's guards
+a bedroom for use by the high ranking members of the order that guards the portal
+a chapel dedicated to Aoskar, the god of portals
+a cistern for providing fresh water
+a classroom for use of initiates learning about the portal's secrets
+a conjuring room for summoning creatures used to investigate or defend the portal
+a crypt where the remains of those that died guarding the portal are kept
+a dining room
+a divination room used to investigate the portal and events tied to it
+a dormitory for visitors and guards
+an entry room
+a gallery for displaying trophies and objects related to the portal and those who guard it
+a guardroom to protect or watch over the portal
+a kitchen
+a laboratory for conducting experiments relating to the portal and creatures that emerge from it
+a library that's holding books about the portal's history
+a prison for holding captives or creatures  that emerge from the portal
+a planar junction, where the gate to another plane once stood, although it appears to be inactive
+a storage room
+a strong room or vault, for guarding valuable treasures connected to the portal
+a study
+a torture chamber, for questioning creatures that pass through the portal or attempt to clandestinely use it
+a latrine or bath
+a workshop for constructing tools and gear needed to study the portal
