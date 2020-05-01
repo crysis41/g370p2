@@ -1,0 +1,18 @@
+an armory stocked with weapons and armor
+an audience chamber, used to receive guests
+a banquet room for important celebrations
+a barracks where the lair's defenders are quartered
+a bedroom, for use by the leaders
+a chapel where the lair's inhabitants worship
+a cistern for drinking water
+a guard room for the defense of the lair
+a kennel for pets or guard beasts
+a kitchen for food storage and preparation
+a pen or prison where captives are held
+a storage with mostly nonperishable goods
+a throne room where the lair's leaders hold court
+a torture chamber
+a training and exercise room
+a trophy room or museum
+a latrine or bath
+a workshop for the construction of weapons, armor, tools, and other goods

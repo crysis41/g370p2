@@ -1,0 +1,6 @@
+antechamber or a waiting room for spectators
+guardroom fortified against intruders
+vault for holding important treasures
+a room containing a puzzle that must be solved to bypass something long dead
+a trap, but it seems to have been disabled
+an observation room, allowing guards or spectators to observe creatures moving through the dungeon

@@ -75,19 +75,29 @@
     <Compile Include="Assets\Scripts\RoomNavigation.cs" />
     <Compile Include="Assets\Scripts\RoomTutorial.cs" />
     <Compile Include="Assets\Scripts\TextInput.cs" />
+    <None Include="Assets\TXTFiles\DungeonStuff\furnishings\templeShrine.txt" />
+    <None Include="Assets\TXTFiles\DungeonStuff\furnishings\maze.txt" />
     <None Include="Assets\TXTFiles\DungeonStuff\chambers.txt" />
+    <None Include="Assets\TXTFiles\DungeonStuff\furnishings\tomb.txt" />
     <None Include="Assets\TXTFiles\DungeonStuff\exitLocation.txt" />
     <None Include="Assets\TXTFiles\firstNames.txt" />
+    <None Include="Assets\TXTFiles\DungeonStuff\furnishings\mine.txt" />
     <None Include="Assets\TXTFiles\DungeonStuff\passages.txt" />
     <None Include="Assets\TextAdventure_pt1\Text_Adventure\ProjectSettings\ProjectVersion.txt" />
+    <None Include="Assets\TXTFiles\DungeonStuff\furnishings\stronghold.txt" />
+    <None Include="Assets\TXTFiles\DungeonStuff\furnishings\lair.txt" />
     <None Include="Assets\TXTFiles\DungeonStuff\beyondDoor.txt" />
     <None Include="Assets\TXTFiles\lastNames.txt" />
+    <None Include="Assets\TXTFiles\DungeonStuff\furnishings\treasureVault.txt" />
     <None Include="Assets\TXTFiles\DungeonStuff\chamberExitsSmall.txt" />
     <None Include="Assets\TXTFiles\DungeonStuff\chamberExitsLarge.txt" />
+    <None Include="Assets\TXTFiles\DungeonStuff\furnishings\general.txt" />
     <None Include="Assets\TXTFiles\DungeonStuff\exitType.txt" />
     <None Include="Assets\TXTFiles\fuck.txt" />
+    <None Include="Assets\TXTFiles\DungeonStuff\furnishings\planarGate.txt" />
     <None Include="Assets\TXTFiles\DungeonStuff\doors.txt" />
     <None Include="Assets\TXTFiles\DungeonStuff\startingArea.txt" />
+    <None Include="Assets\TXTFiles\DungeonStuff\furnishings\deathTrap.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/wilso/OneDrive/Documents/GitHub/g370p2/g370p3/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

@@ -1,0 +1,59 @@
+antechamber
+armory
+audience chamber
+aviary
+banquet room
+barracks
+bath or latrine
+bedroom
+bestiary
+cell
+chantry
+chapel
+cistern
+classroom
+closet
+conjuring room
+court
+crypt
+dining room
+divination room
+dormitory
+dressing room
+entry room or vestibule
+gallery
+game room
+guardroom
+hall
+great hall
+hallway
+kennel
+kitchen
+laboratory
+library
+lounge
+meditation chamber
+observatory
+office
+pantry
+pen or prison
+reception room
+refectory
+robing room
+salon
+shrine
+sitting room
+smithy
+stable
+storage room
+strong room or vault
+study
+temple
+throne room
+torture chamber
+training or exercise room
+trophy room or museum
+waiting room
+nursery or schoolroom
+well
+workshop

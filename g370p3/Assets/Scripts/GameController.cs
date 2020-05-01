@@ -21,6 +21,7 @@ public class GameController : MonoBehaviour
     [HideInInspector] public string[] beyondDoor, chambers, doors, exitLocation, exitType, passages, startingArea, cEL, cES, furnishings, chamberState;
     [HideInInspector] public int dungeonType, rooms, die, direction;
     private string[] directions = new string[4] { "north", "south", "east", "west" };
+    private string[] oppDir = new string[4] { "south", "north", "west", "east" };
 
     // Start is called before the first frame update
     void Awake()
@@ -105,6 +106,8 @@ public class GameController : MonoBehaviour
     {
         ClearCollectionsForNewRoom();
 
+        Debug.Log("DisplayRoomText cleared.");
+
         UnpackRoom();
 
         string joinedInteractionDescriptions = string.Join("\n", interactionDescriptionsInRoom.ToArray());
@@ -132,6 +135,8 @@ public class GameController : MonoBehaviour
 
     void CreateRooms()
     {
+        rooms = 5;
+
         die = Random.Range(0, 9);
 
         direction = Random.Range(0, 3);
@@ -143,7 +148,7 @@ public class GameController : MonoBehaviour
         for (int i = 0; i < rooms; i++)
         {
             room[i] = ScriptableObject.CreateInstance<RoomTutorial>();
-            room[i].exits = new Dictionary<string, Exit>();
+            //room[i].exitDict = new Dictionary<string, Exit>();
         }
 
         for (int i = 0; i < rooms; i++)
@@ -151,14 +156,19 @@ public class GameController : MonoBehaviour
             room[i].roomName = "room" + (i + 1);
             if (i == 0) // start room
             {
-                //room[i].exits = new Exit[1];
+                room[i].exits = new Exit[1];
                 room[i].description = startingArea[die];
 
                 string dirWord = directions[direction];
-                Exit tempExit = new Exit();
-                tempExit.exitDescription = "You see an exit to the " + dirWord + ".";
-                tempExit.valueRoom = room[i + 1];
-                room[i].exits.Add(dirWord, tempExit);
+
+                room[i].exits[0].keyString = dirWord;
+                room[i].exits[0].exitDescription = "You see an exit to the " + dirWord + ".";
+                room[i].exits[0].valueRoom = room[i + 1];
+
+                //Exit tempExit = new Exit();
+                //tempExit.exitDescription = "You see an exit to the " + dirWord + ".";
+                //tempExit.valueRoom = room[i + 1];
+                //room[i].exitDict.Add(dirWord, tempExit);
                 //switch (direction)
                 //{
                 //    case 0:
@@ -186,12 +196,12 @@ public class GameController : MonoBehaviour
             }
             else if (i == rooms) // end room
             {
-                //room[i].exits = new Exit[1];
-                string dirWord = directions[direction];
-                Exit tempExit = new Exit();
-                tempExit.exitDescription = "You see an exit to the " + dirWord + ".";
-                tempExit.valueRoom = room[i - 1];
-                room[i].exits.Add(dirWord, tempExit);
+                room[i].exits = new Exit[1];
+                string dirWord = oppDir[direction];
+
+                room[i].exits[0].keyString = dirWord;
+                room[i].exits[0].exitDescription = "You see an exit to the " + dirWord + ".";
+                room[i].exits[0].valueRoom = room[i - 1];
 
                 //switch (direction)
                 //{
@@ -219,20 +229,24 @@ public class GameController : MonoBehaviour
             }
             else // literally every other room
             {
-                //room[i].exits = new Exit[2];
-                string dirWord = directions[direction];
-                Exit tempExit = new Exit();
-                tempExit.exitDescription = "You see an exit to the " + dirWord + ".";
-                tempExit.valueRoom = room[i - 1];
-                room[i].exits.Add(dirWord, tempExit);
+                room[i].exits = new Exit[2];
+                string dirWord = oppDir[direction];
+
+                room[i].exits[0].keyString = dirWord;
+                room[i].exits[0].exitDescription = "You see an exit to the " + dirWord + ".";
+                room[i].exits[0].valueRoom = room[i - 1];
+
+                //Exit tempExit = new Exit();
+                //tempExit.exitDescription = "You see an exit to the " + dirWord + ".";
+                //tempExit.valueRoom = room[i - 1];
+                //room[i].exitDict.Add(dirWord, tempExit);
+
+
 
                 //switch (direction)
                 //{
                 //    case 0:
-                //        Exit tempExit = new Exit();
-                //        tempExit.exitDescription = "You see an exit to the south.";
-                //        tempExit.valueRoom = room[i - 1];
-                //        room[i].exits.Add("south", tempExit);
+                //        room[i].exits[0].keyString = "south";
                 //        room[i].exits[0].exitDescription = "You see an exit to the south.";
                 //        room[i].exits[0].valueRoom = room[i - 1];
                 //        break;
@@ -264,11 +278,28 @@ public class GameController : MonoBehaviour
 
                 if (i + 1 == rooms) // for the last room
                 {
-                    string dirWord2 = directions[direction];
-                    Exit tempExit2 = new Exit();
-                    tempExit2.exitDescription = "You see an exit to the " + dirWord2 + ".";
-                    tempExit2.valueRoom = room[i];
-                    room[i].exits.Add(dirWord2, tempExit2);
+                    string dirWord2 = oppDir[direction];
+                    //Exit tempExit2 = new Exit();
+                    //tempExit2.exitDescription = "You see an exit to the " + dirWord2 + ".";
+                    //tempExit2.valueRoom = room[i];
+                    //room[i].exitDict.Add(dirWord2, tempExit2);
+
+                    room[i].exits[1].keyString = dirWord2;
+                    room[i].exits[1].exitDescription = "You see an exit to the " + dirWord2;
+                    room[i].exits[1].valueRoom = room[i];
+
+                    while (string.CompareOrdinal(room[i].exits[0].keyString, room[i].exits[1].keyString) == 0)
+                    {
+                        int runningTotal = 1;
+                        Debug.Log("KeyStrings are equal, recalculating try " + runningTotal);
+                        temp = Random.Range(0, 3);
+                        dirWord2 = oppDir[temp];
+                        room[i].exits[1].keyString = dirWord2;
+                        room[i].exits[1].exitDescription = "You see an exit to the " + dirWord2;
+                        room[i].exits[1].valueRoom = room[i];
+                        runningTotal++;
+                    }
+
                     //switch (direction)
                     //{
                     //    case 0:
@@ -296,11 +327,25 @@ public class GameController : MonoBehaviour
                 }
                 else // every other room
                 {
-                    string dirWord2 = directions[direction];
-                    Exit tempExit2 = new Exit();
-                    tempExit2.exitDescription = "You see an exit to the " + dirWord2 + ".";
-                    tempExit2.valueRoom = room[i + 1];
-                    room[i].exits.Add(dirWord2, tempExit);
+                    string dirWord2 = oppDir[direction];
+
+                    room[i].exits[1].keyString = dirWord2;
+                    room[i].exits[1].exitDescription = "You see an exit to the " + dirWord2 + ".";
+                    room[i].exits[1].valueRoom = room[i + 1];
+
+                    while (room[i].exits[0].keyString == room[i].exits[1].keyString)
+                    {
+                        temp = Random.Range(0, 3);
+                        dirWord2 = oppDir[temp];
+                        room[i].exits[1].keyString = dirWord2;
+                        room[i].exits[1].exitDescription = "You see an exit to the " + dirWord2;
+                        room[i].exits[1].valueRoom = room[i];
+                    }
+
+                    //Exit tempExit2 = new Exit();
+                    //tempExit2.exitDescription = "You see an exit to the " + dirWord2 + ".";
+                    //tempExit2.valueRoom = room[i + 1];
+                    //room[i].exitDict.Add(dirWord2, tempExit);
                     //switch (direction)
                     //{
                     //    case 0:
