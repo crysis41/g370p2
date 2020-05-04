@@ -92,6 +92,7 @@
     <None Include="Assets\TXTFiles\DungeonStuff\chamberExitsSmall.txt" />
     <None Include="Assets\TXTFiles\DungeonStuff\chamberExitsLarge.txt" />
     <None Include="Assets\TXTFiles\DungeonStuff\furnishings\general.txt" />
+    <None Include="Assets\TXTFiles\DungeonStuff\chamberState.txt" />
     <None Include="Assets\TXTFiles\DungeonStuff\exitType.txt" />
     <None Include="Assets\TXTFiles\fuck.txt" />
     <None Include="Assets\TXTFiles\DungeonStuff\furnishings\planarGate.txt" />

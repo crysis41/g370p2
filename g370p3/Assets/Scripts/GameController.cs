@@ -19,7 +19,7 @@ public class GameController : MonoBehaviour
     [HideInInspector] public RoomTutorial[] room;
 
     [HideInInspector] public string[] beyondDoor, chambers, doors, exitLocation, exitType, passages, startingArea, cEL, cES, furnishings, chamberState;
-    [HideInInspector] public int dungeonType, rooms, die, direction;
+    [HideInInspector] public int dungeonType, rooms, die, direction, furnished, chamber;
     private string[] directions = new string[4] { "north", "south", "east", "west" };
     private string[] oppDir = new string[4] { "south", "north", "west", "east" };
 
@@ -135,10 +135,6 @@ public class GameController : MonoBehaviour
 
     void CreateRooms()
     {
-        rooms = 5;
-
-        die = Random.Range(0, 9);
-
         direction = Random.Range(0, 3);
 
         room = new RoomTutorial[rooms];
@@ -148,12 +144,11 @@ public class GameController : MonoBehaviour
         for (int i = 0; i < rooms; i++)
         {
             room[i] = ScriptableObject.CreateInstance<RoomTutorial>();
-            //room[i].exitDict = new Dictionary<string, Exit>();
+            room[i].roomName = "room" + (i + 1);
         }
 
         for (int i = 0; i < rooms; i++)
         {
-            room[i].roomName = "room" + (i + 1);
             if (i == 0) // start room
             {
                 room[i].exits = new Exit[1];
@@ -164,37 +159,9 @@ public class GameController : MonoBehaviour
                 room[i].exits[0].keyString = dirWord;
                 room[i].exits[0].exitDescription = "You see an exit to the " + dirWord + ".";
                 room[i].exits[0].valueRoom = room[i + 1];
-
-                //Exit tempExit = new Exit();
-                //tempExit.exitDescription = "You see an exit to the " + dirWord + ".";
-                //tempExit.valueRoom = room[i + 1];
-                //room[i].exitDict.Add(dirWord, tempExit);
-                //switch (direction)
-                //{
-                //    case 0:
-
-                //        room[i].exits[0].keyString = "north";
-                //        room[i].exits[0].exitDescription = "You see an exit to the north.";
-                //        room[i].exits[0].valueRoom = room[i + 1];
-                //        break;
-                //    case 1:
-                //        room[i].exits[0].keyString = "south";
-                //        room[i].exits[0].exitDescription = "You see an exit to the south.";
-                //        room[i].exits[0].valueRoom = room[i + 1];
-                //        break;
-                //    case 2:
-                //        room[i].exits[0].keyString = "east";
-                //        room[i].exits[0].exitDescription = "You see an exit to the east.";
-                //        room[i].exits[0].valueRoom = room[i + 1];
-                //        break;
-                //    case 3:
-                //        room[i].exits[0].keyString = "west";
-                //        room[i].exits[0].exitDescription = "You see an exit to the west.";
-                //        room[i].exits[0].valueRoom = room[i + 1];
-                //        break;
-                //}
+                Debug.Log("Current room: " + room[i].roomName + "\nNext room: " + room[i].exits[0].valueRoom.roomName);
             }
-            else if (i == rooms) // end room
+            else if (i == rooms-1) // end room
             {
                 room[i].exits = new Exit[1];
                 string dirWord = oppDir[direction];
@@ -202,30 +169,6 @@ public class GameController : MonoBehaviour
                 room[i].exits[0].keyString = dirWord;
                 room[i].exits[0].exitDescription = "You see an exit to the " + dirWord + ".";
                 room[i].exits[0].valueRoom = room[i - 1];
-
-                //switch (direction)
-                //{
-                //    case 0:
-                //        room[i].exits[0].keyString = "south";
-                //        room[i].exits[0].exitDescription = "You see an exit to the south.";
-                //        room[i].exits[0].valueRoom = room[i - 1];
-                //        break;
-                //    case 1:
-                //        room[i].exits[0].keyString = "north";
-                //        room[i].exits[0].exitDescription = "You see an exit to the north.";
-                //        room[i].exits[0].valueRoom = room[i - 1];
-                //        break;
-                //    case 2:
-                //        room[i].exits[0].keyString = "west";
-                //        room[i].exits[0].exitDescription = "You see an exit to the west.";
-                //        room[i].exits[0].valueRoom = room[i - 1];
-                //        break;
-                //    case 3:
-                //        room[i].exits[0].keyString = "east";
-                //        room[i].exits[0].exitDescription = "You see an exit to the east.";
-                //        room[i].exits[0].valueRoom = room[i - 1];
-                //        break;
-                //}
             }
             else // literally every other room
             {
@@ -235,37 +178,6 @@ public class GameController : MonoBehaviour
                 room[i].exits[0].keyString = dirWord;
                 room[i].exits[0].exitDescription = "You see an exit to the " + dirWord + ".";
                 room[i].exits[0].valueRoom = room[i - 1];
-
-                //Exit tempExit = new Exit();
-                //tempExit.exitDescription = "You see an exit to the " + dirWord + ".";
-                //tempExit.valueRoom = room[i - 1];
-                //room[i].exitDict.Add(dirWord, tempExit);
-
-
-
-                //switch (direction)
-                //{
-                //    case 0:
-                //        room[i].exits[0].keyString = "south";
-                //        room[i].exits[0].exitDescription = "You see an exit to the south.";
-                //        room[i].exits[0].valueRoom = room[i - 1];
-                //        break;
-                //    case 1:
-                //        room[i].exits[0].keyString = "north";
-                //        room[i].exits[0].exitDescription = "You see an exit to the north.";
-                //        room[i].exits[0].valueRoom = room[i - 1];
-                //        break;
-                //    case 2:
-                //        room[i].exits[0].keyString = "west";
-                //        room[i].exits[0].exitDescription = "You see an exit to the west.";
-                //        room[i].exits[0].valueRoom = room[i - 1];
-                //        break;
-                //    case 3:
-                //        room[i].exits[0].keyString = "east";
-                //        room[i].exits[0].exitDescription = "You see an exit to the east.";
-                //        room[i].exits[0].valueRoom = room[i - 1];
-                //        break;
-                //}
 
                 int temp = Random.Range(0, 3);
 
@@ -279,51 +191,11 @@ public class GameController : MonoBehaviour
                 if (i + 1 == rooms) // for the last room
                 {
                     string dirWord2 = oppDir[direction];
-                    //Exit tempExit2 = new Exit();
-                    //tempExit2.exitDescription = "You see an exit to the " + dirWord2 + ".";
-                    //tempExit2.valueRoom = room[i];
-                    //room[i].exitDict.Add(dirWord2, tempExit2);
 
                     room[i].exits[1].keyString = dirWord2;
-                    room[i].exits[1].exitDescription = "You see an exit to the " + dirWord2;
+                    room[i].exits[1].exitDescription = "You see an exit to the " + dirWord2 + ".";
                     room[i].exits[1].valueRoom = room[i];
-
-                    while (string.CompareOrdinal(room[i].exits[0].keyString, room[i].exits[1].keyString) == 0)
-                    {
-                        int runningTotal = 1;
-                        Debug.Log("KeyStrings are equal, recalculating try " + runningTotal);
-                        temp = Random.Range(0, 3);
-                        dirWord2 = oppDir[temp];
-                        room[i].exits[1].keyString = dirWord2;
-                        room[i].exits[1].exitDescription = "You see an exit to the " + dirWord2;
-                        room[i].exits[1].valueRoom = room[i];
-                        runningTotal++;
-                    }
-
-                    //switch (direction)
-                    //{
-                    //    case 0:
-                    //        room[i].exits[1].keyString = "north";
-                    //        room[i].exits[1].exitDescription = "You see an exit to the north.";
-                    //        room[i].exits[1].valueRoom = room[i];
-                    //        break;
-                    //    case 1:
-                    //        room[i].exits[1].keyString = "south";
-                    //        room[i].exits[1].exitDescription = "You see an exit to the south.";
-                    //        room[i].exits[1].valueRoom = room[i];
-                    //        break;
-                    //    case 2:
-                    //        room[i].exits[1].keyString = "east";
-                    //        room[i].exits[1].exitDescription = "You see an exit to the east.";
-                    //        room[i].exits[1].valueRoom = room[i];
-                    //        break;
-                    //    case 3:
-                    //        room[i].exits[1].keyString = "west";
-                    //        room[i].exits[1].exitDescription = "You see an exit to the west.";
-                    //        room[i].exits[1].valueRoom = room[i];
-                    //        break;
-                    //}
-
+                    Debug.Log("Current room: " + room[i].roomName + "\nNext room: " + room[i].exits[1].valueRoom.roomName);
                 }
                 else // every other room
                 {
@@ -332,48 +204,64 @@ public class GameController : MonoBehaviour
                     room[i].exits[1].keyString = dirWord2;
                     room[i].exits[1].exitDescription = "You see an exit to the " + dirWord2 + ".";
                     room[i].exits[1].valueRoom = room[i + 1];
+                    Debug.Log("Current room: " + room[i].roomName + "\nNext room: " + room[i].exits[1].valueRoom.roomName);
 
-                    while (room[i].exits[0].keyString == room[i].exits[1].keyString)
+                    while ((room[i].exits[0].keyString == "north" && room[i].exits[1].keyString == "south") || (room[i].exits[0].keyString == "south" && room[i].exits[1].keyString == "north"))
                     {
-                        temp = Random.Range(0, 3);
-                        dirWord2 = oppDir[temp];
-                        room[i].exits[1].keyString = dirWord2;
-                        room[i].exits[1].exitDescription = "You see an exit to the " + dirWord2;
-                        room[i].exits[1].valueRoom = room[i];
-                    }
+                        if (room[i].exits[0].keyString == room[i].exits[1].keyString)
+                        {
+                            int temp2 = Random.Range(0, 3);
 
-                    //Exit tempExit2 = new Exit();
-                    //tempExit2.exitDescription = "You see an exit to the " + dirWord2 + ".";
-                    //tempExit2.valueRoom = room[i + 1];
-                    //room[i].exitDict.Add(dirWord2, tempExit);
-                    //switch (direction)
-                    //{
-                    //    case 0:
-                    //        room[i].exits[1].keyString = "north";
-                    //        room[i].exits[1].exitDescription = "You see an exit to the north.";
-                    //        room[i].exits[1].valueRoom = room[i + 1];
-                    //        break;
-                    //    case 1:
-                    //        room[i].exits[1].keyString = "south";
-                    //        room[i].exits[1].exitDescription = "You see an exit to the south.";
-                    //        room[i].exits[1].valueRoom = room[i + 1];
-                    //        break;
-                    //    case 2:
-                    //        room[i].exits[1].keyString = "east";
-                    //        room[i].exits[1].exitDescription = "You see an exit to the east.";
-                    //        room[i].exits[1].valueRoom = room[i + 1];
-                    //        break;
-                    //    case 3:
-                    //        room[i].exits[1].keyString = "west";
-                    //        room[i].exits[1].exitDescription = "You see an exit to the west.";
-                    //        room[i].exits[1].valueRoom = room[i + 1];
-                    //        break;
-                    //}
+                            while (temp2 == temp)
+                            {
+                                temp2 = Random.Range(0, 3);
+                            }
+
+                            dirWord2 = oppDir[temp2];
+                            room[i].exits[1].keyString = dirWord2;
+                            room[i].exits[1].exitDescription = "You see an exit to the " + dirWord2;
+                            room[i].exits[1].valueRoom = room[i + 1];
+                            Debug.Log("Current room: " + room[i].roomName + "\nNext room: " + room[i].exits[1].valueRoom.roomName);
+                        }
+                        else
+                        {
+                            Debug.Log("Loop borked");
+                            break;
+                        }
+                        break;
+                    }
                 }
             }
+
+            PopulateRooms(i);
         }
 
         roomNavigation.currentRoom = room[0];
+    }
+    
+    void PopulateRooms(int roomNumber)
+    {
+        if (roomNumber == 0)
+        {
+            die = Random.Range(0, startingArea.Length - 1);
+            furnished = Random.Range(0, furnishings.Length);
+            chamber = Random.Range(0, chamberState.Length - 1);
+            room[roomNumber].description = "You enter into a "  + startingArea[die] + ". It appears that this room used to be " + furnishings[furnished] + ", but it is currently " + chamberState[chamber] +".\n";
+        }
+        else if (roomNumber == rooms-1)
+        {
+            die = Random.Range(0, chambers.Length - 1);
+            furnished = Random.Range(0, furnishings.Length - 1);
+            chamber = Random.Range(0, chamberState.Length - 1);
+            room[roomNumber].description = "You enter into a " + chambers[die] + ". It appears that this room used to be " + furnishings[furnished] + ", but it is currently " + chamberState[chamber] + ".\nCongratulations! You've found the end!";
+        }
+        else
+        {
+            die = Random.Range(0, chambers.Length - 1);
+            furnished = Random.Range(0, furnishings.Length - 1);
+            chamber = Random.Range(0, chamberState.Length - 1);
+            room[roomNumber].description = "You enter into a " + chambers[die] + ". This room appears to have once been " + furnishings[furnished] + ", but it is currently " + chamberState[chamber] + ".";
+        }
     }
 
     // Update is called once per frame
